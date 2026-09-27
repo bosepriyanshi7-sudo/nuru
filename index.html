@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Nurain ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --pink:#ff4f91;
+  --rose:#ff8fb3;
+  --gold:#ffd88a;
+  --cream:#fff7ef;
+  --night:#08030d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden}
+body{
+  font-family:Montserrat,sans-serif;
+  background:#08030d;color:#fff;
+  cursor:default;
+}
+.scene{
+  position:fixed;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity 1s ease,transform 1s ease;
+  transform:scale(1.03);
+}
+.scene.active{
+  opacity:1;visibility:visible;pointer-events:auto;transform:scale(1);
+}
+button{
+  border:0;cursor:pointer;color:#fff;
+  font-family:Montserrat,sans-serif;font-weight:600;
+  border-radius:999px;padding:13px 25px;
+  background:linear-gradient(135deg,#ff4f91,#bd2d87);
+  box-shadow:0 8px 30px #ff4f9160;
+  transition:.3s;
+}
+button:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 40px #ff4f9180}
+.glow-text{text-shadow:0 0 8px #fff,0 0 22px #ff6fa9,0 0 50px #ff2e83}
+
+/* ---------- Intro ---------- */
+#s1{
+  background:
+    radial-gradient(circle at 20% 20%,#ffd67b 0,#ff8b9d 24%,transparent 48%),
+    radial-gradient(circle at 80% 70%,#bb4fff 0,transparent 38%),
+    linear-gradient(135deg,#4b0d3b,#13041d 70%);
+}
+.intro-card{
+  width:min(410px,88vw);
+  padding:45px 34px 38px;
+  text-align:center;
+  border:1px solid #ffffff2a;
+  border-radius:28px;
+  background:#ffffff0d;
+  backdrop-filter:blur(22px);
+  box-shadow:0 30px 100px #0008,inset 0 0 30px #ffffff08;
+}
+.intro-icon{font-size:48px;animation:float 2.5s ease-in-out infinite}
+.intro-card h1{
+  font-family:"Great Vibes",cursive;
+  font-size:55px;font-weight:400;margin:10px 0 3px;
+}
+.intro-card .tiny{font-size:11px;letter-spacing:4px;text-transform:uppercase;opacity:.65;margin-bottom:25px}
+.input{
+  width:100%;padding:15px 18px;border:1px solid #fff3;border-radius:14px;
+  outline:none;text-align:center;color:#fff;background:#0004;
+  font-family:inherit;margin-bottom:13px;
+}
+.input::placeholder{color:#fff8}
+.start{font-size:13px;letter-spacing:.3px}
+@keyframes float{50%{transform:translateY(-9px) rotate(3deg)}}
+
+/* ---------- Memory transition ---------- */
+#s2{
+  background:linear-gradient(135deg,#ff8cae,#b34cff 60%,#32145d);
+}
+.memory-card{
+  width:min(700px,88vw);text-align:center;padding:25px;
+}
+.memory-card .year{font-size:12px;letter-spacing:5px;text-transform:uppercase;opacity:.7}
+.memory-card h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(38px,7vw,72px);line-height:.95;margin:14px 0 20px;
+}
+.memory-card p{font-family:"Cormorant Garamond",serif;font-size:23px;line-height:1.35}
+
+/* ---------- Main reveal ---------- */
+#s3{
+  background:
+    radial-gradient(circle at 50% 50%,#ff5f9e33,transparent 28%),
+    radial-gradient(circle at 20% 20%,#ffbd5930,transparent 25%),
+    radial-gradient(circle at 80% 80%,#ad4cff25,transparent 28%),
+    #09030d;
+}
+.orbit{
+  position:absolute;width:min(650px,90vw);aspect-ratio:1;border:1px solid #ffffff15;
+  border-radius:50%;animation:spin 22s linear infinite;
+}
+.orbit:before,.orbit:after{
+  content:"✦";position:absolute;color:#ffd98d;font-size:18px;
+}
+.orbit:before{left:7%;top:18%}.orbit:after{right:10%;bottom:20%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.reveal{text-align:center;z-index:2}
+.reveal .eyebrow{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:#ffd7a2}
+.reveal h1{
+  font-family:"Great Vibes",cursive;font-size:clamp(70px,15vw,155px);
+  font-weight:400;line-height:.8;margin:25px 0 30px;
+}
+.reveal .name{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(25px,4vw,40px);letter-spacing:5px;
+}
+.reveal button{margin-top:35px}
+
+/* ---------- Cake ---------- */
+#s4{background:#030107}
+.cake-scene{text-align:center;z-index:2}
+.cake-scene h2{
+  font-family:"Cormorant Garamond",serif;font-size:38px;margin-bottom:45px;
+}
+.cake{
+  position:relative;width:260px;height:220px;margin:auto;
+  filter:drop-shadow(0 0 28px #ff39a777);
+}
+.tier{
+  position:absolute;left:50%;transform:translateX(-50%);
+  border-radius:14px 14px 10px 10px;
+  background:linear-gradient(#ff8ac0,#b42cff);
+  box-shadow:inset 0 -8px 0 #7a18aa,0 0 25px #ff47ac55;
+}
+.t1{width:235px;height:70px;bottom:0}
+.t2{width:190px;height:60px;bottom:57px}
+.t3{width:145px;height:53px;bottom:106px}
+.drip{
+  position:absolute;width:25px;height:28px;background:#fff0f8;border-radius:0 0 15px 15px;
+  top:0;
+}
+.t1 .drip:nth-child(1){left:30px}.t1 .drip:nth-child(2){left:105px}.t1 .drip:nth-child(3){right:30px}
+.t2 .drip:nth-child(1){left:30px}.t2 .drip:nth-child(2){right:30px}
+.t3 .drip{left:60px}
+.candle{
+  position:absolute;left:50%;bottom:155px;transform:translateX(-50%);
+  width:13px;height:52px;border-radius:8px;
+  background:repeating-linear-gradient(135deg,#fff 0 7px,#ff7cae 7px 14px);
+}
+.flame{
+  position:absolute;left:50%;top:-28px;transform:translateX(-50%) rotate(45deg);
+  width:22px;height:22px;border-radius:60% 0 60% 60%;
+  background:#fff3a3;box-shadow:0 0 20px #ffd43b,0 0 45px #ff7d32;
+  animation:flicker .7s infinite alternate;
+}
+@keyframes flicker{to{transform:translateX(-50%) rotate(42deg) scale(1.15)}}
+
+/* ---------- Fireworks ---------- */
+#s5{background:#010107;overflow:hidden}
+.firework{
+  position:absolute;width:4px;height:4px;border-radius:50%;
+  background:#fff;box-shadow:0 0 10px #fff;
+  animation:explode 2.7s infinite;
+}
+.firework:before{
+  content:"";position:absolute;inset:-80px;
+  border-radius:50%;
+  background:repeating-conic-gradient(from 0deg,#ff5d9d 0 1deg,transparent 1deg 11deg);
+  mask-image:radial-gradient(circle,transparent 0 15%,#000 16% 45%,transparent 47%);
+}
+.firework:nth-child(1){left:18%;top:30%}
+.firework:nth-child(2){left:78%;top:25%;animation-delay:.8s}
+.firework:nth-child(3){left:50%;top:55%;animation-delay:1.4s}
+.firework:nth-child(4){left:30%;top:70%;animation-delay:1.9s}
+@keyframes explode{
+  0%,100%{transform:scale(.05);opacity:0}
+  18%{transform:scale(.2);opacity:1}
+  50%{transform:scale(1);opacity:1}
+  78%{transform:scale(1.15);opacity:.65}
+}
+
+/* ---------- Final title ---------- */
+#s6{
+  background:
+    radial-gradient(circle at 50% 50%,#ff4f9120,transparent 30%),
+    #040208;
+}
+.stars{
+  position:absolute;inset:0;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:34px 34px;opacity:.35;
+}
+.final-title{text-align:center;z-index:2}
+.final-title .small{
+  font-size:12px;letter-spacing:7px;text-transform:uppercase;color:#ffd898;
+}
+.final-title h1{
+  font-family:"Great Vibes",cursive;
+  font-size:clamp(75px,16vw,170px);font-weight:400;line-height:.75;margin:22px 0;
+}
+.final-title h2{
+  font-family:"Cormorant Garamond",serif;font-size:clamp(25px,5vw,48px);font-weight:400;
+}
+.final-title button{margin-top:35px}
+
+/* ---------- Letter ---------- */
+#s7{
+  background:
+    radial-gradient(circle at 10% 20%,#ff6b9d22,transparent 30%),
+    radial-gradient(circle at 90% 80%,#bd67ff22,transparent 30%),
+    #100914;
+  overflow:auto;padding:35px 0;
+}
+.letter{
+  position:relative;width:min(700px,88vw);
+  padding:60px clamp(25px,6vw,65px);
+  background:linear-gradient(135deg,#fffaf5,#fff0f3);
+  color:#6c4052;border-radius:4px;
+  box-shadow:0 35px 100px #000b;
+  animation:letterIn 1.2s cubic-bezier(.2,.8,.2,1);
+}
+.letter:before{
+  content:"";position:absolute;inset:14px;border:1px solid #e8aabd;
+  pointer-events:none;
+}
+.letter .top{font-size:28px;text-align:center}
+.letter h2{
+  font-family:"Great Vibes",cursive;color:#d94e7f;
+  text-align:center;font-size:clamp(48px,9vw,75px);font-weight:400;
+  margin:8px 0 25px;
+}
+.letter p{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(18px,3vw,23px);line-height:1.45;margin:14px 0;
+}
+.letter .sign{
+  text-align:center;color:#d94e7f;font-size:24px;margin-top:24px;
+}
+.letter .heart{font-size:38px;text-align:center;margin-top:14px;animation:heart 1.2s infinite}
+
+/* music */
+.music{
+  position:fixed;right:18px;bottom:18px;z-index:50;
+  display:flex;align-items:center;gap:9px;
+  padding:10px 14px;border:1px solid #fff2;border-radius:999px;
+  background:#0b0610cc;backdrop-filter:blur(12px);
+  box-shadow:0 8px 30px #0007;
+  font-size:10px;letter-spacing:.4px;
+}
+.music .disc{font-size:17px;animation:spin 4s linear infinite paused}
+.music.playing .disc{animation-play-state:running}
+.music iframe{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;left:-10px;top:-10px}
+
+/* hearts / confetti */
+.fx{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.heart-f{
+  position:absolute;bottom:-30px;font-size:18px;
+  animation:rise linear infinite;opacity:.8;
+}
+@keyframes rise{to{transform:translateY(-115vh) translateX(80px) rotate(35deg);opacity:0}}
+.confetti i{
+  position:absolute;top:-15px;width:6px;height:12px;
+  animation:fall linear infinite;
+}
+@keyframes fall{to{transform:translateY(115vh) rotate(720deg)}}
+@keyframes letterIn{
+  from{opacity:0;transform:translateY(100vh) rotate(-5deg)}
+  to{opacity:1;transform:translateY(0) rotate(0)}
+}
+@keyframes heart{50%{transform:scale(1.2)}}
+@media(max-width:600px){
+  .letter{margin:20px 0}
+  .music{right:10px;bottom:10px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<section class="scene active" id="s1">
+  <div class="intro-card">
+    <div class="intro-icon">🎁</div>
+    <h1>For Nurain</h1>
+    <div class="tiny">a little something from the heart</div>
+    <input class="input" id="name" value="Nurain" placeholder="Enter your name">
+    <button class="start" onclick="startSurprise()">Open your surprise ✨</button>
+  </div>
+</section>
+
+<!-- MEMORY -->
+<section class="scene" id="s2">
+  <div class="memory-card">
+    <div class="year">A friendship that started in 10th</div>
+    <h2>Some people enter your life…<br>and somehow become home.</h2>
+    <p>From sitting together in 10th to becoming such an important part of my life…</p>
+  </div>
+</section>
+
+<!-- GRAND REVEAL -->
+<section class="scene" id="s3">
+  <div class="orbit"></div>
+  <div class="reveal">
+    <div class="eyebrow">Today is all about you</div>
+    <h1 class="glow-text">Happy Birthday</h1>
+    <div class="name">N U R A I N &nbsp;♡</div>
+    <button onclick="go(4)">Make a wish 🎂</button>
+  </div>
+</section>
+
+<!-- CAKE -->
+<section class="scene" id="s4">
+  <div class="cake-scene">
+    <h2>Close your eyes & make a wish ✨</h2>
+    <div class="cake">
+      <div class="tier t1"><span class="drip"></span><span class="drip"></span><span class="drip"></span></div>
+      <div class="tier t2"><span class="drip"></span><span class="drip"></span></div>
+      <div class="tier t3"><span class="drip"></span></div>
+      <div class="candle"><div class="flame"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FIREWORKS -->
+<section class="scene" id="s5">
+  <div class="firework"></div><div class="firework"></div>
+  <div class="firework"></div><div class="firework"></div>
+  <div class="reveal">
+    <div class="eyebrow">And now...</div>
+    <h1 class="happy glow-text">A celebration<br>for you ✨</h1>
+  </div>
+</section>
+
+<!-- TITLE -->
+<section class="scene" id="s6">
+  <div class="stars"></div>
+  <div class="final-title">
+    <div class="small">To my favourite person</div>
+    <h1 class="glow-text">Happy Birthday</h1>
+    <h2>Nurain 🥹❤️</h2>
+    <button onclick="go(7)">Read your letter 💌</button>
+  </div>
+</section>
+
+<!-- LETTER -->
+<section class="scene" id="s7">
+  <div class="fx" id="hearts"></div>
+  <div class="confetti" id="confetti"></div>
+
+  <article class="letter">
+    <div class="top">🌷 ✨ 🎂 ✨ 🌷</div>
+    <h2>Happy Birthday</h2>
+
+    <p><b>Happy Birthday to my favourite person! 🥹❤️</b></p>
+
+    <p>
+      From sitting together in 10th to becoming such an important part of my life,
+      I honestly don’t know how I got this lucky. You’re not just my best friend,
+      you’re genuinely one of the best people I’ve ever met. Thank you for being
+      there through all the random conversations, stupid laughs, bad days, and
+      everything in between.
+    </p>
+
+    <p>
+      I hope this year brings you all the happiness, love, success, and beautiful
+      moments you deserve. Never change the amazing person you are. I’m so grateful
+      that school gave me you. 🫶🏻
+    </p>
+
+    <p>
+      <b>Happy birthday, bestie. I love you so much! 💗🎂✨</b>
+    </p>
+
+    <div class="sign">Forever grateful for you ♡</div>
+    <div class="heart">❤️</div>
+  </article>
+</section>
+
+<!-- MUSIC CONTROL -->
+<div class="music" id="musicBox">
+  <span class="disc">💿</span>
+  <span id="musicText">Ikk Kudi · Shahid Mallya</span>
+  <button id="musicBtn" onclick="toggleMusic()" style="padding:7px 13px;font-size:10px">Play ♫</button>
+
+  <!-- Official Zee Music Company video. Browser autoplay rules may require the first click. -->
+  <iframe
+    id="yt"
+    src="https://www.youtube.com/embed/cyKZXbxx2lc?enablejsapi=1&loop=1&playlist=cyKZXbxx2lc"
+    title="Ikk Kudi by Shahid Mallya"
+    allow="autoplay; encrypted-media"
+    loading="lazy">
+  </iframe>
+</div>
+
+<script>
+let timer;
+let musicPlaying=false;
+const musicBtn=document.getElementById('musicBtn');
+const musicBox=document.getElementById('musicBox');
+const yt=document.getElementById('yt');
+
+function go(num){
+  document.querySelectorAll('.scene').forEach(s=>s.classList.remove('active'));
+  document.getElementById('s'+num).classList.add('active');
+  clearTimeout(timer);
+
+  if(num===2) timer=setTimeout(()=>go(3),4200);
+  if(num===3) timer=setTimeout(()=>go(4),6500);
+  if(num===4) timer=setTimeout(()=>go(5),5000);
+  if(num===5) timer=setTimeout(()=>go(6),5200);
+}
+
+function startSurprise(){
+  // The click is a user gesture, so this is the best point to request music playback.
+  playMusic();
+  go(2);
+}
+
+function postYT(command){
+  yt.contentWindow.postMessage(JSON.stringify({
+    event:'command',func:command,args:[]
+  }),'*');
+}
+
+function playMusic(){
+  postYT('playVideo');
+  musicPlaying=true;
+  musicBtn.textContent='Pause ❚❚';
+  musicBox.classList.add('playing');
+}
+function pauseMusic(){
+  postYT('pauseVideo');
+  musicPlaying=false;
+  musicBtn.textContent='Play ♫';
+  musicBox.classList.remove('playing');
+}
+function toggleMusic(){
+  musicPlaying ? pauseMusic() : playMusic();
+}
+
+/* Floating hearts */
+const hearts=document.getElementById('hearts');
+const heartChars=['♡','♥','✦','❤'];
+for(let i=0;i<28;i++){
+  const h=document.createElement('span');
+  h.className='heart-f';
+  h.textContent=heartChars[Math.floor(Math.random()*heartChars.length)];
+  h.style.left=Math.random()*100+'%';
+  h.style.animationDuration=(5+Math.random()*6)+'s';
+  h.style.animationDelay=(Math.random()*6)+'s';
+  h.style.fontSize=(12+Math.random()*22)+'px';
+  hearts.appendChild(h);
+}
+
+/* Confetti */
+const confetti=document.getElementById('confetti');
+const colors=['#ff4f91','#ffd88a','#b968ff','#6ce7ff','#fff'];
+for(let i=0;i<65;i++){
+  const c=document.createElement('i');
+  c.style.left=Math.random()*100+'%';
+  c.style.animationDuration=(3+Math.random()*5)+'s';
+  c.style.animationDelay=(Math.random()*5)+'s';
+  c.style.background=colors[Math.floor(Math.random()*colors.length)];
+  c.style.transform='rotate('+Math.random()*360+'deg)';
+  confetti.appendChild(c);
+}
+
+document.getElementById('name').addEventListener('keydown',e=>{
+  if(e.key==='Enter') startSurprise();
+});
+</script>
+</body>
+</html>
